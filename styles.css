@@ -819,6 +819,57 @@ img {
     }
 }
 
+/* Very small phones: prevent rapid contraction and make tiles match screen width */
+@media screen and (max-width: 525px) {
+    html { scroll-padding-top: 74px; }
+
+    /* Container padding and header */
+    .container { padding: 0 12px; }
+    .nav-container { padding: 0 12px; }
+    .logo-img { max-height: 48px; }
+
+    /* Hero: smaller title and looser spacing so it doesn't push content */
+    .hero { padding-top: 90px; padding-bottom: 30px; }
+    .hero-title { font-size: 1.8rem; letter-spacing: 0.6px; }
+    .hero-tagline { font-size: 0.98rem; line-height: 1.5; }
+    .hero-content { padding: 0 8px; }
+
+    /* Services: force single column and reduce gaps/paddings */
+    .services-grid { grid-template-columns: 1fr; gap: 12px; max-width: 100%; }
+    .service-card { border-radius: 10px; }
+    .service-header { padding: 12px 14px; }
+    .service-content.active { padding: 14px; max-height: 520px; }
+    .service-content li { font-size: 0.95rem; }
+
+    /* Sectors: single column tiles matching phone width */
+    .sectors-grid { grid-template-columns: 1fr; gap: 12px; }
+    .sector-card { padding: 18px 16px; }
+    .sector-card h3 { font-size: 1.1rem; }
+    .sector-card p { font-size: 0.95rem; }
+
+    /* About / Contact: reduce padding and stack cleanly */
+    .about-section, .services-section, .sectors-section, .contact-section {
+        padding: 40px 0;
+    }
+    .about-content { gap: 20px; }
+    .about-image img { max-width: 420px; }
+
+    .contact-content { grid-template-columns: 1fr; gap: 20px; }
+    .contact-buttons { max-width: 100%; }
+
+    /* Footer: simplified spacing */
+    .footer { padding: 24px 0; }
+    .footer-content { gap: 18px; grid-template-columns: 1fr; }
+
+    /* Nav links and tap targets */
+    .nav-link { padding: 14px 0; font-size: 1.05rem; }
+    .nav-menu li { margin: 10px 0; }
+
+    /* Keep images fluid and avoid fixed heights */
+    img { height: auto; max-width: 100%; }
+
+}
+
 /* Smooth scrolling and transitions */
 @media (prefers-reduced-motion: reduce) {
     * {
